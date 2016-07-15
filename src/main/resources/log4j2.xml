@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration status="TRACE" monitorInterval="10">
+
+	<appenders>
+		<Console name="Console" target="SYSTEM_OUT">
+			<PatternLayout
+				pattern="%d{dd-MM-yyyy HH:mm:ss.SSS} [%t] %-5level %X{userID} %X{sessionID} %logger{36} - %msg%n" />
+		</Console>
+		<!-- you want put log on file -->
+
+		<!-- <RollingRandomAccessFile name="Console" fileName="E:\new_project\AllLog.log" 
+			filePattern="/logs/es/$${date:yyyy-MM}/%d{dd-MMM-yyyy}-app-%i.log.gz"> <PatternLayout 
+			pattern="%d{dd-MM-yyyy HH:mm:ss.SSS} [%t] %-5level %X{reqID} %X{userID} %X{sessionID} 
+			%logger{36} - %msg%n" /> <Policies> <TimeBasedTriggeringPolicy /> <SizeBasedTriggeringPolicy 
+			size="250 MB" /> </Policies> </RollingRandomAccessFile> -->
+
+		<!-- you want set all incoming request log put on particular file -->
+		<!-- <RollingRandomAccessFile name="httpRequests" fileName="E:\new_project\Request_log.log" 
+			filePattern="/logs/es/$${date:yyyy-MM}/%d{dd-MMM-yyyy}-app-%i.log.gz"> <PatternLayout 
+			pattern="%d{dd-MM-yyyy HH:mm:ss.SSS} [%t] %-5level %X{reqID} %X{userID} %X{sessionID} 
+			%logger{36} - %msg%n" /> <Policies> <TimeBasedTriggeringPolicy /> <SizeBasedTriggeringPolicy 
+			size="250 MB" /> </Policies> </RollingRandomAccessFile> -->
+
+	</appenders>
+
+	<loggers>
+
+		<root level="WARN">
+			<appender-ref ref="Console" />
+		</root>
+		<!-- below line put log only com.app package. -->
+		<logger name="com.app" level="DEBUG" />
+
+		<!-- You want enable log of springframework.web -->
+		<!-- <logger name="org.springframework.web" level="DEBUG" /> -->
+
+		<!-- you want enable log of hibernate -->
+		<!-- <logger name="org.hibernate" level="DEBUG" /> -->
+
+	</loggers>
+</configuration>
