@@ -16,7 +16,7 @@ public class TestController {
   public String test() {
 
     logger.debug("----------------------HELLOWORLD---------------------");
-    return "Hello ";
+    return "Hello with update ";
   }
 
 }
