@@ -1,4 +1,4 @@
-package com.controller;
+package com.app;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -12,7 +12,7 @@ public class TestController {
 	private static Logger logger = LoggerFactory
 			.getLogger(TestController.class);
 
-	@RequestMapping(value = "/hello", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
+	@RequestMapping(value = "/hello", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
 	public String test() {
 
 		logger.debug("----------------------HELLOWORLD---------------------");
